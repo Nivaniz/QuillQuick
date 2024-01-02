@@ -74,7 +74,7 @@ class ImageTile extends StatelessWidget {
           style: TextStyle(color: Colors.blueGrey),
         ),
         Text(date ?? "",
-            style: Theme.of(context).textTheme.caption?.copyWith(
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: ThemeController.instance.primary(),
                 fontWeight: FontWeight.bold))
       ]),

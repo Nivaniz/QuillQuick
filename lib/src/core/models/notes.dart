@@ -23,26 +23,51 @@ class Note {
 }
 
 Note note = Note(
-    title: "Mi primera nota",
-    description: "Esta es mi primera nota",
-    type: TypeNote.Text,
-    date: "06-05-2021");
-
-Note note1 = Note(
-    title: "Mi primera nota",
-    description: "Esta es mi primera nota",
+    title: "Terminar de cocinar para la cena",
+    description: "Cocinar el brocoli primero y después la pasta",
     type: TypeNote.Image,
     image:
-        "https://images.unsplash.com/photo-1621272036047-bb0f76bbc1ad?q=80&w=1912&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    date: "06-05-2021");
+        "https://ed88xd5c3h8.exactdn.com/wp-content/uploads/2021/11/receta-pasta-calabacin-pollo-para-bebes.jpg?strip=all&lossy=1&ssl=1",
+    date: "06-01-2024");
+
+Note note1 = Note(
+    title: "Viaje a japón",
+    description: "Reccorrido que hay que tomar para visitar japón:",
+    type: TypeNote.Image,
+    image:
+        "https://colombojaponesa.edu.co/wp-content/uploads/2022/06/Templo-Kinkakuji-en-Kioto-Japon.jpg",
+    date: "01-05-2024");
 
 Note note2 = Note(
-    title: "Mi primera nota",
+    title:
+        "Cosas para agregar a mi portafolio personal: -Nueva seccion, - Datos personales",
     description:
-        "Esta es mi primera nota https://pub.dev/packages/flutter_staggered_grid_view/example",
+        "Lo primero que hay que agregar a: https://codingwithnirvana.pythonanywhere.com",
     type: TypeNote.TextImage,
     image:
-        "https://images.unsplash.com/photo-1621272036047-bb0f76bbc1ad?q=80&w=1912&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    date: "06-05-2021");
+        "https://www.pixartprinting.it/blog/wp-content/uploads/2022/11/IMMAGINE-1.jpg",
+    date: "06-08-2024");
 
-List<Note> notes = [note, note1, note2, note, note1, note2, note, note1, note2];
+Note note3 = Note(
+    title: "Preparativos para la Cena Especial",
+    description:
+        "Comienza cocinando el pollo a la parrilla y luego prepara la ensalada fresca con aderezo de limón.",
+    type: TypeNote.Image,
+    image: "https://i.blogs.es/abc649/mejores-recetas-pollo/1366_2000.jpg",
+    date: "05-01-2024");
+
+Note note4 = Note(
+    title: "Contraseña del internet",
+    description: "Contraseña: AKD7D9FNFJDSO",
+    type: TypeNote.Text,
+    date: "05-01-2023");
+
+Note note5 = Note(
+    title: "Muestra de comida",
+    description: "Muestra de platillos para el evento",
+    type: TypeNote.TextImage,
+    image:
+        "https://www.unileverfoodsolutions.com.mx/tendencias/de-mexico-para-el-mundo/platillos-mexicanos/top10-platillos/jcr:content/parsys/content-aside-footer/columncontrol/columnctrl_parsys_1/textimage/image.transform/jpeg-optimized/image.1592429873377.jpg",
+    date: "07-05-2024");
+
+List<Note> notes = [note, note1, note2, note3, note4, note5];

@@ -2,6 +2,7 @@ import 'package:appnotas/src/core/constants/parameters.dart';
 import 'package:appnotas/src/core/controllers/theme_controller.dart';
 import 'package:appnotas/src/core/models/notes.dart';
 import 'package:appnotas/src/ui/configure.dart';
+import 'package:appnotas/src/ui/pages/add_note_page.dart';
 import 'package:appnotas/src/ui/pages/note_page.dart';
 import 'package:appnotas/src/ui/widgets/cards/custom_cards.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,9 @@ class NotePrivatePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: theme.primary(),
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(
+            context, AddNotePage.ADD_NOTE_PAGE_ROUTE,
+            arguments: AddNotePageArguments(private: true)),
       ),
       backgroundColor: background(),
       appBar: AppBar(

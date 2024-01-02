@@ -1,7 +1,10 @@
 import 'package:appnotas/src/core/constants/parameters.dart';
 import 'package:appnotas/src/core/controllers/theme_controller.dart';
 import 'package:appnotas/src/core/models/notes.dart';
+import 'package:appnotas/src/ui/pages/add_note_page.dart';
 import 'package:appnotas/src/ui/pages/note_page.dart';
+import 'package:appnotas/src/ui/pages/search_notes_pages.dart';
+import 'package:appnotas/src/ui/pages/trash_page.dart';
 import 'package:appnotas/src/ui/widgets/cards/custom_cards.dart';
 import 'package:appnotas/src/ui/widgets/custom_bottom_sheet/custom_bottom_sheet.dart';
 import 'package:appnotas/src/ui/widgets/custom_bottom_sheet/custom_bottom_sheet_controller.dart';
@@ -52,9 +55,8 @@ class _HomePageState extends State<HomePage>
             floatingActionButton: FloatingActionButton(
               backgroundColor: theme.primary(),
               child: Icon(Icons.add),
-              onPressed: () {},
-              // onPressed: () =>
-              // Navigator.pushNamed(context, AddNotePage.ADD_NOTE_PAGE_ROUTE),
+              onPressed: () =>
+                  Navigator.pushNamed(context, AddNotePage.ADD_NOTE_PAGE_ROUTE),
             ),
             backgroundColor: theme.background(),
             appBar: AppBar(
@@ -67,22 +69,15 @@ class _HomePageState extends State<HomePage>
               actions: [
                 IconButton(
                   icon: Icon(CupertinoIcons.search, color: fontColor()),
-                  onPressed: () {},
-                  // onPressed: () => Navigator.pushNamed(
-                  //context, SearchNotesPage.SEARCH_NOTES_PAGE_ROUTE),
+                  onPressed: () => Navigator.pushNamed(
+                      context, SearchNotesPage.SEARCH_NOTES_PAGE_ROUTE),
                 ),
                 IconButton(
                   icon: Icon(CupertinoIcons.delete_simple, color: fontColor()),
-                  onPressed: () {},
-                  // onPressed: () =>
-                  // Navigator.pushNamed(context, TrashPage.TRASH_PAGE_ROUTE),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, TrashPage.TRASH_PAGE_ROUTE),
                 ),
-                IconButton(
-                  icon: Icon(CupertinoIcons.lock, color: fontColor()),
-                  onPressed: () {
-                    _controller.open();
-                  },
-                ),
+                //  EN UN FUTURO SE BORRA PERO LO DEJO POR SI ACASO
               ],
             ),
             body: _Body(),

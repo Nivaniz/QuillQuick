@@ -4,23 +4,24 @@ import 'package:flutter/material.dart';
 class MediumButton extends StatelessWidget {
   final String title;
   final bool primaryColor;
-  final Icon? icon;
+  final IconData? iconData;
   final Function()? onTap;
   const MediumButton({
     Key? key,
     this.title = "",
     this.primaryColor = true,
     this.onTap,
-    this.icon,
+    this.iconData,
   }) : super(key: key);
 
-  Color getButtonColor() {
+  Color getColor() {
     return this.primaryColor
         ? ThemeController.instance.primaryButton()
         : ThemeController.instance.secondaryButton();
   }
 
-  Color getTextColor() {
+  Color getColorText() {
+    if (!this.primaryColor) return Colors.black;
     return !ThemeController.instance.brightnessValue
         ? Colors.black
         : Colors.white;
@@ -34,17 +35,18 @@ class MediumButton extends StatelessWidget {
         width: 300,
         height: 50,
         decoration: BoxDecoration(
-            color: getButtonColor(), borderRadius: BorderRadius.circular(32)),
+            color: getColor(), borderRadius: BorderRadius.circular(32)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            icon != null
-                ? Icon(icon as IconData?, color: getTextColor())
+            iconData != null
+                ? Icon(iconData,
+                    color: getColorText()) // Cambiado de icon a iconData
                 : SizedBox(),
-            SizedBox(width: icon != null ? 8 : 0),
+            SizedBox(width: iconData != null ? 8 : 0),
             Text(
               title,
-              style: TextStyle(color: getTextColor(), fontSize: 16),
+              style: TextStyle(color: getColorText(), fontSize: 16),
             )
           ],
         ),

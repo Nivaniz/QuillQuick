@@ -68,15 +68,10 @@ class TextInput extends StatelessWidget {
 class LargeTextInput extends StatelessWidget {
   final TextEditingController? controller;
   final String title;
-  final bool private;
   final Function(String)? textEntry;
 
   const LargeTextInput(
-      {Key? key,
-      this.controller,
-      this.title = "",
-      this.textEntry,
-      this.private = false})
+      {Key? key, this.controller, this.title = "", this.textEntry})
       : super(key: key);
 
   @override
@@ -86,19 +81,15 @@ class LargeTextInput extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(color: fontColor())),
-          SizedBox(height: 4),
+          Text(title, style: Theme.of(context).textTheme.caption),
+          const SizedBox(height: 4),
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(8)),
             child: TextField(
-              obscureText: private,
+              maxLines: 6,
               controller: controller,
               decoration: const InputDecoration(
                   contentPadding:
