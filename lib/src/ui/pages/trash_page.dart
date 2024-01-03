@@ -2,6 +2,7 @@ import 'package:appnotas/src/core/controllers/theme_controller.dart';
 import 'package:appnotas/src/core/models/notes.dart';
 import 'package:flutter/material.dart';
 
+// AQUÍ CAMBIAMOS SI FUNCIONA FIREBASE PARA AGREGAR LAS NOTAS
 Color fontColor() {
   return ThemeController.instance.brightnessValue ? Colors.black : Colors.white;
 }

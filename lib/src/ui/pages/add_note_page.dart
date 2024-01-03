@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:appnotas/src/core/constants/parameters.dart';
 import 'package:appnotas/src/core/controllers/theme_controller.dart';
 import 'package:appnotas/src/core/models/notes.dart';
+import 'package:appnotas/src/core/services/firebase_services.dart';
 import 'package:appnotas/src/ui/widgets/buttons/simple_buttons.dart';
 import 'package:appnotas/src/ui/widgets/text_inputs/text_inputs.dart';
 import 'package:file_picker/file_picker.dart';
@@ -69,6 +70,8 @@ class __BodyState extends State<_Body> {
 
   final Note note = Note();
   final ImagePicker _picker = ImagePicker();
+
+  FirebaseServices _services = FirebaseServices.instance;
 
   String parseDate() {
     final date = DateTime.now();
@@ -149,8 +152,46 @@ class __BodyState extends State<_Body> {
               note.description = _description.value.text;
               note.private = widget.arguments.private;
               if (image != null) {
-                note.image = image;
-                note.type = TypeNote.Image;
+                final Map<String, dynamic> response =
+                    await _services.uploadImage(File(image!));
+                print(response["status"]);
+                if (response["status"] == StatusNetwork.Connected) {
+                  print("url:" + response["data"]);
+                  note.image = response["data"];
+                  note.type = TypeNote.Image;
+                }
+              }
+
+              final Map<String, dynamic> response;
+              final Map<String, dynamic> values = {
+                "date": parseDate(),
+                "description": note.description,
+                "image": note.image,
+                "private": note.private,
+                "state": note.state.toString(),
+                "title": note.title,
+                "type": note.type.toString(),
+              };
+
+              if (widget.arguments.edit) {
+                response = await _services.update("notes", note.id!, values);
+              } else {
+                response = await _services.create("notes", values);
+              }
+
+              switch (response["status"]) {
+                case StatusNetwork.Connected:
+                  print("Se adiciono correctamente");
+                  break;
+                case StatusNetwork.Exception:
+                  print("No se adiciono correctamente");
+                  break;
+                case StatusNetwork.NoInternet:
+                  print("No hay una conexion a internet");
+                  break;
+                default:
+                  print("Ocurrio un error");
+                  break;
               }
             },
           )

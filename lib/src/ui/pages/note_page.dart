@@ -15,6 +15,7 @@ import 'package:flutter/rendering.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // r'(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+'
+// AQUÍ CAMBIAMOS SI FUNCIONA FIREBASE PARA AGREGAR LAS NOTAS
 
 class NotePageArguments {
   final Note? note;

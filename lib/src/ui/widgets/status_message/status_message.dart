@@ -22,13 +22,13 @@ class StatusMessage extends StatelessWidget {
         children: [
           Text(
             status == StatusNetwork.NoInternet
-                ? "¡Ups! Algo salió mal. Parece que no tienes internet"
-                : "¡Ups! Algo salió mal. Ocurrió una excepción",
+                ? "No hay una conexion a internet"
+                : "Ocurrió una excepción",
             style: TextStyle(
                 color: fontColor(), fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Container(
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.all(24),
             decoration: BoxDecoration(
                 color: Configure.BACKGROUND_LIGHT,
                 borderRadius: BorderRadius.circular(150)),
@@ -48,8 +48,7 @@ class StatusMessage extends StatelessWidget {
                 "Por favor intente de nuevo",
                 style: TextStyle(color: fontColor()),
               ),
-              TextButton(
-                  onPressed: onTap, child: const Text("Volver a intentar"))
+              TextButton(child: Text("Volver a intentar"), onPressed: onTap)
             ],
           )
         ],

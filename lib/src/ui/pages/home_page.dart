@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 //EL FONDO AL DESLIZAR ME CAMBIA DE COLOR
+// AQUÍ CAMBIAMOS SI FUNCIONA FIREBASE PARA AGREGAR LAS NOTAS CON UN FUTURE
 GlobalKey<ScaffoldState> homePageKey = GlobalKey<ScaffoldState>();
 GlobalKey<ScaffoldMessengerState> homePageMessengerKey =
     GlobalKey<ScaffoldMessengerState>();
