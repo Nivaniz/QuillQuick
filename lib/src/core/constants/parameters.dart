@@ -1,11 +1,11 @@
 enum TypeNote {
   Text,
   Image,
-  Network, //Missing se puede agregar desde custom_cards
+  Network,
   TextImage,
-  TextNetwork, //Missing se puede agregar desde custom_cards
-  ImageNetwork, //Missing se puede agregar desde custom_cards
-  TextImageNetwork //Missing se puede agregar desde custom_cards
+  TextNetwork,
+  ImageNetwork,
+  TextImageNetwork
 }
 
 enum StateNote { Visible, Archive, Delete }

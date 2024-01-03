@@ -45,14 +45,12 @@ class LandingPage extends StatelessWidget {
                           fontWeight: FontWeight.bold, fontSize: 28)),
                   const SizedBox(height: 16),
                   const Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 20), // Ajusta el valor según sea necesario
+                    padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
                       Constants.SUB_TITLE,
                       style: TextStyle(
                         color: Colors.blueGrey,
-                        fontSize:
-                            13, // Puedes ajustar el tamaño según tus preferencias
+                        fontSize: 13,
                       ),
                       textAlign: TextAlign.center,
                     ),

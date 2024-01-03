@@ -157,10 +157,8 @@ class EmailLoginPageState extends State<EmailLoginPage> {
 
     try {
       await initDatabase;
-      // Resto del código
     } catch (e) {
       print('Error durante la inicialización de la base de datos: $e');
-      // Puedes manejar el error según tus necesidades
     }
 
     if (initDatabase == null) {
@@ -212,7 +210,7 @@ class EmailLoginPageState extends State<EmailLoginPage> {
                 duration: Duration(seconds: 3),
               ),
             );
-            // Aquí puedes manejar la contraseña incorrecta
+            // manejar la contraseña incorrecta
           }
         } else {
           print('Credenciales inválidas. Usuario no encontrado.');
@@ -223,11 +221,11 @@ class EmailLoginPageState extends State<EmailLoginPage> {
               duration: Duration(seconds: 3),
             ),
           );
-          // Aquí puedes manejar el usuario no encontrado
+          // manejar el usuario no encontrado
         }
       } catch (e) {
         print('Error al verificar las credenciales: $e');
-        // Aquí puedes manejar cualquier error que ocurra durante la verificación
+        //manejar cualquier error que ocurra durante la verificación
       }
     }
   }

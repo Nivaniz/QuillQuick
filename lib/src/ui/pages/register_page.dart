@@ -130,8 +130,10 @@ class RegisterPageState extends State<RegisterPage> {
                                   validator: (value) {
                                     if (value == null ||
                                         value.isEmpty ||
-                                        value == '') {
-                                      return 'El campo nombre es obligatorio';
+                                        value.length < 3 ||
+                                        value.length > 20 ||
+                                        RegExp(r'[#$%&/*!]').hasMatch(value)) {
+                                      return 'Ingresa un nombre válido (sin caracteres especiales)';
                                     }
                                     return null;
                                   }),
@@ -151,8 +153,11 @@ class RegisterPageState extends State<RegisterPage> {
                                         validator: (value) {
                                           if (value == null ||
                                               value.isEmpty ||
-                                              value == '') {
-                                            return 'El campo apellido paterno es obligatorio';
+                                              value.length < 3 ||
+                                              value.length > 20 ||
+                                              RegExp(r'[#$%&/*!]')
+                                                  .hasMatch(value)) {
+                                            return 'Ingresa un apellido paterno válido (sin caracteres especiales)';
                                           }
                                           return null;
                                         }),
@@ -172,8 +177,11 @@ class RegisterPageState extends State<RegisterPage> {
                                         validator: (value) {
                                           if (value == null ||
                                               value.isEmpty ||
-                                              value == '') {
-                                            return 'El campo apellido materno es obligatorio';
+                                              value.length < 3 ||
+                                              value.length > 20 ||
+                                              RegExp(r'[#$%&/*!]')
+                                                  .hasMatch(value)) {
+                                            return 'Ingresa un apellido materno válido (sin caracteres especiales)';
                                           }
                                           return null;
                                         }),
@@ -194,8 +202,8 @@ class RegisterPageState extends State<RegisterPage> {
                                   validator: (value) {
                                     if (value == null ||
                                         value.isEmpty ||
-                                        value == '') {
-                                      return 'El campo email es obligatorio';
+                                        !value.contains('@')) {
+                                      return 'Ingresa un email válido';
                                     }
                                     return null;
                                   }),
@@ -225,8 +233,9 @@ class RegisterPageState extends State<RegisterPage> {
                                   validator: (value) {
                                     if (value == null ||
                                         value.isEmpty ||
-                                        value == '') {
-                                      return 'El campo de teléfono es obligatorio';
+                                        value.length != 10 ||
+                                        !RegExp(r'^[0-9]+$').hasMatch(value)) {
+                                      return 'Ingresa un número de teléfono válido (solo números)';
                                     }
                                     return null;
                                   }),
@@ -245,9 +254,15 @@ class RegisterPageState extends State<RegisterPage> {
                                         ),
                                         validator: (value) {
                                           if (value == null ||
-                                              value.isEmpty ||
-                                              value == '') {
-                                            return 'El campo de contraseña es obligatorio';
+                                              value.length < 8 ||
+                                              value.length > 20 ||
+                                              !RegExp(r'[A-Z]')
+                                                  .hasMatch(value) ||
+                                              !RegExp(r'[0-9]')
+                                                  .hasMatch(value) ||
+                                              !RegExp(r'[!@#$%^&*(),.?":{}|<>]')
+                                                  .hasMatch(value)) {
+                                            return 'Ingresa una contraseña válida (entre 8 y 20 caracteres, al menos una mayúscula, un número y un caracter especial)';
                                           }
                                           return null;
                                         }),

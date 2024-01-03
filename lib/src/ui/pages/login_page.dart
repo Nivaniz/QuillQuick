@@ -24,7 +24,7 @@ class LoginPageState extends State<LoginPage> {
         width: double.infinity,
         height: double.infinity,
         padding: const EdgeInsets.all(16),
-        color: Colors.white, // Establece el color de fondo del Scaffold
+        color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
