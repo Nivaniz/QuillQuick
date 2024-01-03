@@ -14,9 +14,28 @@ La aplicación QuillQuick es una plataforma versátil para la gestión eficiente
 
 ## Ventanas
 
-Ventana Principal:
+Ventanas principales:
 <p align="center">
-  <img src="https://github.com/Nivaniz/BlackJack/blob/main/img/main.png" alt="Main Window" style="width: 50%; max-width: 200px;">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Landing.png" alt="Main Window" width="200">
+    <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Main.png" alt="Main" width="200">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/InicioSesion.png" alt="Inicio de Sesión" width="200">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/CrearCuenta.png" alt="Crear Cuenta" width="200">
+</p>
+<br>
+Ventanas secundarias:
+<p align="center">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Notas.png" alt="Notas" width="200">
+    <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/NotaEjemplo.png" alt="Notas Ejemplo" width="200">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Ajustes.png" alt="Ajustes" width="200">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Exportar.png" alt="Exportar" width="200">
+</p>
+<br>
+Ventanas Tercearias:
+<p align="center">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Privadas.png" alt="Privadas" width="200">
+    <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Recursos.png" alt="Recursos" width="200">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Task.png" alt="Task" width="200">
+  <img src="https://github.com/Nivaniz/QuillQuick/blob/main/img/Papelería.png" alt="Papelería" width="200">
 </p>
 
 ### Instalación y Ejecución
